@@ -20,10 +20,12 @@ public class CalcolaBiglietto {
 		
 	Scanner sc = new Scanner(System.in);
 	
+	// RACCOLGO DATI SU KM
 	System.out.println("Quanti chilometri vuoi percorrere?");
-	double customerKm = sc.nextInt();
+	int customerKm = sc.nextInt();
 	System.out.println("Vuoi percorrere " + customerKm + "km");
 	
+	// RACCOLGO DATI SU ETA'
 	System.out.println("Quanti anni hai?");
 	int customerAge = sc.nextInt();
 	System.out.println("Hai " + customerAge + " anni");
@@ -32,13 +34,14 @@ public class CalcolaBiglietto {
 	
 	double price = 0.21 * customerKm;
 	
+	// APPLICO EVENTUALI SCONTI
 	if (customerAge < 18) {
-		double discount = price / 100 * 20;
+		double discount = price * 0.20;
 		price = price - discount;
 	}
 	
 	if (customerAge > 65) {
-		double discount = price / 100 * 40;
+		double discount = price * 0.40;
 		price = price - discount;
 	}
 	
