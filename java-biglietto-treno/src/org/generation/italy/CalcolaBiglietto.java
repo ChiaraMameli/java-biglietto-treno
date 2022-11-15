@@ -35,6 +35,10 @@ public class CalcolaBiglietto {
 	double price = 0.21 * customerKm;
 	
 	// APPLICO EVENTUALI SCONTI
+	if(customerAge < 12) {
+		price = 0;
+	}
+	
 	if (customerAge < 18) {
 		double discount = price * 0.20;
 		price = price - discount;
